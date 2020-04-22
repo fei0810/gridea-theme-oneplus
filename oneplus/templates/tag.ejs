@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%-include( './includes/head',{siteTitle:themeConfig.siteName})%>
+</head>
+
+<body>
+  <div class="main animated">
+    <%-include( './includes/header')%>
+    <div class="autopagerize_page_element">
+      <div class="content">
+        <%posts.forEach(function(post){%>
+        <div class="post animated fadeInDown">
+          <div class="post_title">
+            <h2>
+              <a href="<%= post.link %>">
+                <%=post.title%></a>
+            </h2>
+          </div>
+          <div class="list">
+            <div class="post_content">
+              <p>
+                <%-post.abstract%></p>
+            </div>
+          </div>
+          <div class="post_footer">
+            <div class="meta">
+              <div class="info">
+                <div class="article-infos">
+                  <i class="iconfont icon-words-sm"></i>
+                  <span class="article-info"><%=post.stats.words%></span>
+                  <i class="iconfont icon-time-sm"></i>
+                  <span class="article-info"><%=post.dateFormat%></span>
+                </div>
+                <%if(post.tags.length > 0) { %>
+                <span class="field tags">
+                  <i class="iconfont icon-tag-sm"></i>
+                  <%post.tags.forEach(function(tag){%>
+                  <a href="<%= tag.link %>" class="article-info"><%=tag.name%></a>
+                  <%});%>
+                </span>
+                <%}%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%});%>
+              </div>
+            </div>
+            <%-include( './includes/pagination')%>
+          </div>
+          <%-include( './includes/footer')%>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%-include( './includes/head',{siteTitle:`${post.title} | ${themeConfig.siteName}`})%>
+  <meta name="description" content="<%- post.description %>" />
+  <meta name="keywords" content="<%- post.tags.map(tag => tag.name).join(',') %>" />
+</head>
+
+<body>
+  <div class="main animated">
+    <%-include( './includes/header')%>
+    <div class="autopagerize_page_element">
+      <div class="content">
+        <div class="post_page">
+          <div class="post animated fadeInDown">
+            <div class="post_title post_detail_title">
+              <h2>
+                <a>
+                  <%=post.title%></a>
+              </h2>
+              <span class="article-info"><%=post.dateFormat%>, <%=post.stats.words%> words, <%=post.stats.text%></span>
+            </div>
+            <div class="post_content markdown">
+              <p class="md_block">
+                <span class="md_line md_line_start md_line_end">
+                  <%-post.content%><br />
+                  <%if(site.customConfig.copyright){%>
+                  <span class="copyright">· 分享链接 <%-post.link%> </span>
+                </span>
+                <%}%>
+              </p>
+            </div>
+            <div class="post_footer">
+              <%if(post.tags.length > 0) { %>
+                <div class="meta">
+                  <div class="info">
+                    <span class="field tags">
+                      <i class="iconfont icon-tag-sm"></i>
+                      <%post.tags.forEach(function(tag){%>
+                      <a href="<%= tag.link %>" class="article-info">
+                        <%=tag.name%></a>
+                      <%});%></span>
+                  </div>
+                </div>
+                <%}%>
+              <% if (post.nextPost && !post.hideInList) { %>
+                <div class="next-post" style="margin-top: 20px;">
+                  <div class="next">下一篇</div>
+                  <a href="<%= post.nextPost.link %>">
+                    <h3 class="post-title">
+                      <%= post.nextPost.title %>
+                    </h3>
+                  </a>
+                </div>
+                <% } %>
+            </div>
+          </div>
+          <%if(typeof commentSetting!=='undefined' &&commentSetting.showComment){%>
+          <%if(commentSetting.commentPlatform==='gitalk' ){%>
+          <%-include( './includes/gitalk')%>
+          <%}%>
+                      <%if(commentSetting.commentPlatform==='disqus' ){%>
+          <%-include( './includes/disqus')%>
+          <%}%>
+                            <%}%>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%-include( './includes/footer')%>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</body>
+
+</html>

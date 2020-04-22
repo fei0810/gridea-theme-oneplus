@@ -1,0 +1,36 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<title><%=siteTitle%></title>
+<link rel="shortcut icon" href="<%= themeConfig.domain %>/favicon.ico">
+<link href="<%= themeConfig.domain %>/styles/main.css?v=<%= site.utils.now %>" rel="stylesheet">
+<link href="//at.alicdn.com/t/font_1678829_1mxi55l93a3.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="<%= themeConfig.siteName%> » Feed"
+  href="<%= themeConfig.domain %>/atom.xml">
+<%if(site.customConfig.busuanzi){%>
+<script async src="//cdn.busuanzi.ibruce.info/cdn/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<%}%>
+<% if (site.customConfig.ga) { %>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= site.customConfig.ga %>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', '<%= site.customConfig.ga %>');
+</script>
+<% } %>
+<% if (site.customConfig.ba) { %>
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?<%= site.customConfig.ba %>";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+<% } %>

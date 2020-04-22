@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%-include( './includes/head',{siteTitle:themeConfig.siteName})%></head>
+
+<body>
+  <div class="main animated">
+    <%-include( './includes/header')%>
+    <div class="autopagerize_page_element">
+      <div class="content">
+        <div class="list_with_title animated fadeInDown">
+          <div class="tags-container">
+            <%tags.forEach((tag)=>{%>
+            <a class="tag" href="<%= tag.link %>">
+              <%=tag.name%></a>
+            <%});%></div>
+        </div>
+      </div>
+      <div style="clear:both;height:80px;"></div>
+    </div>
+  </div>
+  <%-include( './includes/footer')%>
+</body>
+
+</html>

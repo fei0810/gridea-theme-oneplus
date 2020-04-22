@@ -1,0 +1,84 @@
+{
+  "name": "OnePlus",
+  "version": "0.1.0",
+  "author": "kaopubear",
+  "repository": "https://github.com/fei0810/gridea-theme-oneplus",
+  "customConfig": [{
+      "name": "github",
+      "label": "Github",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "twitter",
+      "label": "Twitter",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "weibo",
+      "label": "微博",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "instagram",
+      "label": "instagram",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "telegram",
+      "label": "Telegram",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "copyright",
+      "label": "在文末显示原文地址",
+      "group": "展示",
+      "value": false,
+      "type": "switch"
+    },
+    {
+      "name": "footerMenu",
+      "label": "使用底部菜单而非顶部菜单",
+      "group": "展示",
+      "value": false,
+      "type": "switch"
+    },
+    {
+      "name": "busuanzi",
+      "label": "不蒜子访问统计",
+      "group": "展示",
+      "value": false,
+      "type": "switch"
+    },
+    {
+      "name": "ga",
+      "label": "Google Analytics",
+      "group": "统计",
+      "value": "",
+      "type": "input",
+      "note": "UA-xxxxxxxxx-x"
+    },
+    {
+      "name": "ba",
+      "label": "百度统计",
+      "group": "统计",
+      "value": "",
+      "type": "input",
+      "note": "站点 ID"
+    }
+  ]
+}

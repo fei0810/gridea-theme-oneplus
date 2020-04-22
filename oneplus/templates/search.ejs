@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('./includes/head', { siteTitle: themeConfig.siteName }) %>
+    <script src="//cdn.jsdelivr.net/gh/fei0810/gridea-search/lib/fuse.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/fei0810/gridea-search/lib/ejs.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/fei0810/gridea-search/lib/gridea-search.js"></script>
+    <script src="/blog/media/gridea-search/result-template.ejs" type="text/ejs"></script>
+</head>
+
+<body>
+    <div class="main animated">
+        <%- include('./includes/header') %>
+        <div id="gridea-search-result">
+            <p class="searching">搜索中......</p>
+            <p class="no-result" style="display:none">未搜索到相关文章</p>
+        </div>
+    </div>
+    <%- include('./includes/footer') %>
+</body>
+
+</html>

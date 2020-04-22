@@ -1,0 +1,9 @@
+<%- sitemap() %><%  -%>
+<%
+function sitemap(){
+  let links=''
+  site.posts.forEach(function(post){
+    links+=post.link+'\n'
+}) 
+  return links
+}%>

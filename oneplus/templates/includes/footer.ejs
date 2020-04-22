@@ -1,0 +1,31 @@
+<div class="footer">
+  <%if(site.customConfig.footerMenu){%>
+  <div class="menu">
+    <%menus.forEach(function(menu){%>
+    <%if(menu.openType==='External' ){%>
+    <a href="<%= menu.link %>" class="menu" target="_blank"><%=menu.name%></a>
+    <%}else{%>
+    <a href="<%= menu.link %>" class="menu"><%=menu.name%></a>
+    <%}%>
+    <%});%>
+  </div>
+  <%}%>
+  <div class="powered">
+    Powered by<a href="https://gridea.dev/" target="_blank">Gridea</a>&<a
+    href="https://github.com/fei0810/gridea-theme-oneplus" target="_blank">Theme OnePlus</a>
+ </div>
+ <div class="footer_slogan">
+  <%- themeConfig.footerInfo %>
+</div>
+<div id="back_to_top" class="back_to_top">
+  <span>△</span>
+</div>
+<script src="<%= themeConfig.domain %>/media/scripts/util.js"></script>
+<%if(site.customConfig.busuanzi){%>
+<p class="statistic" id="busuanzi_container_site_pv">
+  Traffic statistics: site <span id="busuanzi_value_site_pv"></span> times, page <span
+    id="busuanzi_value_page_pv"></span> times.
+</p>
+</script>
+<%}%>
+</div>
